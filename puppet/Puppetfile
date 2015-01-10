@@ -1,0 +1,5 @@
+# This is currently a noop but will be supported in the future.
+forge 'forge.puppetlabs.com'
+
+mod 'profiles',
+  :git => 'git@github.com:thinktainer/puppet-profiles-roles.git'
