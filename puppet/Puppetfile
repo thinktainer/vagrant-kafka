@@ -6,5 +6,8 @@ mod 'deric/zookeeper'
 mod 'richardc/datacat'
 mod 'spiette/selinux'
 
+mod 'whisklabs/kafka',
+  :git => 'git@github.com:thinktainer/puppet-kafka.git'
+
 mod 'profiles',
   :git => 'git@github.com:thinktainer/puppet-profiles-roles.git'

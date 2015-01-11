@@ -27,3 +27,20 @@ node 'zookeeper.local.dev' {
    Yumrepo['zookeeper'] -> Class['zookeeper']
 }
 
+# kafka brokers
+node /^kb\d{2}.*/ {
+
+  class { 'selinux':
+    mode => 'permissive'
+  }
+
+  class { 'kafka':
+    broker_id         => '0',
+    hostname          => $::ipaddress_eth1,
+    zookeeper_connect => '192.168.55.1',
+    package_url       => 'http://mirrors.ukfast.co.uk/sites/ftp.apache.org/kafka/0.8.2-beta/kafka_2.10-0.8.2-beta.tgz'
+  }
+
+
+}
+
