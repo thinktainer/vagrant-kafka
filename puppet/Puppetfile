@@ -1,5 +1,10 @@
 # This is currently a noop but will be supported in the future.
 forge 'forge.puppetlabs.com'
 
+mod 'puppetlabs/stdlib'
+mod 'deric/zookeeper'
+mod 'richardc/datacat'
+mod 'spiette/selinux'
+
 mod 'profiles',
   :git => 'git@github.com:thinktainer/puppet-profiles-roles.git'
