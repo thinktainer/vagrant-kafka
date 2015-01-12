@@ -1,4 +1,2 @@
 .vagrant
-/puppet/modules/
-!/puppet/modules/.gitkeep
 
