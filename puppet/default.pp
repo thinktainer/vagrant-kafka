@@ -1,5 +1,7 @@
 node 'zookeeper.local.dev' {
 
+  include stdlib
+
   class { 'selinux':
     mode => 'permissive'
   }

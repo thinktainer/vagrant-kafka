@@ -12,4 +12,4 @@
 	url = git@github.com:puppetlabs/puppetlabs-stdlib.git
 [submodule "puppet/modules/zookeeper"]
 	path = puppet/modules/zookeeper
-	url = git@github.com:deric/puppet-zookeeper.git
+	url = git@github.com:thinktainer/puppet-zookeeper.git
