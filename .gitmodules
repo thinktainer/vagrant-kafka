@@ -1,9 +1,6 @@
 [submodule "puppet/modules/datacat"]
 	path = puppet/modules/datacat
 	url = git@github.com:richardc/puppet-datacat.git
-[submodule "puppet/modules/kafka"]
-	path = puppet/modules/kafka
-	url = git@github.com:thinktainer/vagrant-kafka.git
 [submodule "puppet/modules/selinux"]
 	path = puppet/modules/selinux
 	url = git@github.com:spiette/puppet-selinux.git
@@ -13,3 +10,6 @@
 [submodule "puppet/modules/zookeeper"]
 	path = puppet/modules/zookeeper
 	url = git@github.com:thinktainer/puppet-zookeeper.git
+[submodule "puppet/modules/kafka"]
+	path = puppet/modules/kafka
+	url = git@github.com:thinktainer/puppet-kafka.git
