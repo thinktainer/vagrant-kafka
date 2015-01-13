@@ -41,6 +41,11 @@ node /^kb(\d{2}).*/ {
     ip           => "192.168.55.10"
    }
 
+  host {'localhost':
+    ensure => present,
+    ip     => '127.0.0.1'
+  }
+
   class { 'selinux':
     mode => 'permissive'
   }
