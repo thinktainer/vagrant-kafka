@@ -1,0 +1,11 @@
+# vi: set ft=yaml:sw=2:ts=2:expandtab:
+---
+hosts:
+  zk01.local.dev:
+    ip: 192.168.55.1
+    host_aliases: zk01
+
+play::version: 2.2.1
+play::install_path: /opt
+play::user: playframework
+

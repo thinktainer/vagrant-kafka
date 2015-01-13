@@ -1,6 +1,12 @@
-node 'zookeeper.local.dev' {
+class hosts ($hosts = hiera_hash("hosts")) {
+    create_resources('host', $hosts)
+}
+
+node /^zk\d{2}.*/ {
 
   include stdlib
+  include ::hosts
+  include ::roles::kafkawebconsole
 
   class { 'selinux':
     mode => 'permissive'
@@ -32,19 +38,7 @@ node 'zookeeper.local.dev' {
 # kafka brokers
 node /^kb(\d{2}).*/ {
 
-  $hostname = "kb${1}"
-  $fqdn = "${hostname}.local.dev"
-
-  host{ $fqdn:
-    ensure       => present,
-    host_aliases => $hostname,
-    ip           => "192.168.55.10"
-   }
-
-  host {'localhost':
-    ensure => present,
-    ip     => '127.0.0.1'
-  }
+  include ::hosts
 
   class { 'selinux':
     mode => 'permissive'
