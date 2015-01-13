@@ -1,0 +1,3 @@
+# vi: set ft=yaml:sw=2:ts=2:expandtab:
+---
+kafka:hostname: "kb01.local.dev"

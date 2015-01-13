@@ -30,7 +30,16 @@ node 'zookeeper.local.dev' {
 }
 
 # kafka brokers
-node /^kb\d{2}.*/ {
+node /^kb(\d{2}).*/ {
+
+  $hostname = "kb${1}"
+  $fqdn = "${hostname}.local.dev"
+
+  host{ $fqdn:
+    ensure       => present,
+    host_aliases => $hostname,
+    ip           => "192.168.55.10"
+   }
 
   class { 'selinux':
     mode => 'permissive'
