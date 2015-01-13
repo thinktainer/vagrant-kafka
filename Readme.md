@@ -12,3 +12,13 @@ anda a kafka broker.
 
 ## Run
 Run `vagrant up --provider=virtualbox`
+
+This will give you a web interface listening on localhost:9000.
+You can then register your running zookeeper instance in the web console
+with:
+
+- ip: `192.168.55.1`
+- port: `2181`
+- name: doesn't matter
+- group: doesn't matter
+
