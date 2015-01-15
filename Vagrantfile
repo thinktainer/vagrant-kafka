@@ -13,7 +13,8 @@ Vagrant.configure(2) do |config|
       vb.cpus = 1
     end
 
-    zk.vm.network "private_network", ip: "192.168.55.1"
+    zk.vm.network "private_network", ip: "192.168.55.1",
+      virtualbox__intnet: true
 
     zk.vm.network "forwarded_port", guest: 9000, host: 9000
 
