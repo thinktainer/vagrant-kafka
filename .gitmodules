@@ -19,3 +19,6 @@
 [submodule "puppet/modules/vcsrepo"]
 	path = puppet/modules/vcsrepo
 	url = git@github.com:puppetlabs/puppetlabs-vcsrepo.git
+[submodule "puppet/modules/play"]
+	path = puppet/modules/play
+	url = git@github.com:thinktainer/puppet-play.git
