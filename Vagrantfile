@@ -28,7 +28,8 @@ Vagrant.configure(2) do |config|
       vb.memory = 1024
       vb.cpus = 1
     end
-    kb.vm.network "private_network", ip: "192.168.55.10"
+    kb.vm.network "private_network", ip: "192.168.55.10",
+      virtualbox__intnet: true
 
     kb.ssh.forward_agent = true
 
