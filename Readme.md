@@ -1,6 +1,7 @@
 # Vagrant kafka
-A multi machine vagrant / puppet set up that spins up a zookeeper instance
-anda a kafka broker.
+A multi machine vagrant / puppet set up that spins up a
+[zookeeper](http://zookeeper.apache.org) instance
+and a [kafka](http://kafka.apache.org) broker.
 
 ## Prerequisites
 - A working ssh environment on the host machine that allows connecting
@@ -11,7 +12,14 @@ anda a kafka broker.
 - [Virtualbox](https://www.virtualbox.org/wiki/Downloads)
 
 ## Run
+
 Run `vagrant up --provider=virtualbox`
+
+	vagrant ssh kafka-broker
+	cd /usr/local/kafka/kafka
+
+
+## Configure kafka-web-console
 
 This will give you a web interface listening on localhost:9000.
 You can then register your running zookeeper instance in the web console
@@ -22,27 +30,10 @@ with:
 - name: doesn't matter
 - group: doesn't matter
 
-## To restart services
 
-### kafka-web-console
+## Service management
 
-		vagrant ssh zookeeper
-		sudo su playframework
-		cd ~/kafka-web-console
-		play start
-		[ctrl]-d
-		[ctrl]-d
+See [service management documentation](doc/service_management)
 
-### zookeeper
-
-		vagrant ssh zookeeper
-		sudo service zookeeper-server restart
-		[ctrl]-d
-
-### kafka broker
-
-		vagrant ssh kafka-broker
-		sudo service kafka restart
-		[ctrl]-d
 
 
