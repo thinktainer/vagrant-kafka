@@ -22,3 +22,6 @@
 [submodule "puppet/modules/play"]
 	path = puppet/modules/play
 	url = git@github.com:thinktainer/puppet-play
+[submodule "puppet/modules/epel"]
+	path = puppet/modules/epel
+	url = git@github.com:stahnma/puppet-module-epel.git
