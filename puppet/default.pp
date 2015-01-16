@@ -5,6 +5,7 @@ class hosts ($hosts = hiera_hash("hosts")) {
 node /^zk\d{2}.*/ {
 
   include stdlib
+  include epel
   include ::hosts
   include ::roles::kafkawebconsole
 
@@ -38,6 +39,7 @@ node /^zk\d{2}.*/ {
 # kafka brokers
 node /^kb(\d{2}).*/ {
 
+  include epel
   include ::hosts
 
   class { 'selinux':

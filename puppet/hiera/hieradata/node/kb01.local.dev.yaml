@@ -6,4 +6,7 @@ hosts:
     ip: 192.168.55.10
     host_aliases:
       - kb01
-
+  zk01.local.dev:
+    ip: 192.168.55.1
+    host_aliases:
+      - zk01
