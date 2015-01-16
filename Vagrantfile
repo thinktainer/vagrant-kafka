@@ -9,12 +9,11 @@ Vagrant.configure(2) do |config|
     zk.vm.hostname = 'zk01.local.dev'
     zk.vm.provider "virtualbox" do |vb|
       vb.gui = false
-      vb.memory = 512
+      vb.memory = 1024
       vb.cpus = 1
     end
 
-    zk.vm.network "private_network", ip: "192.168.55.1",
-      virtualbox__intnet: true
+    zk.vm.network "private_network", ip: "192.168.55.1"
 
     zk.vm.network "forwarded_port", guest: 9000, host: 9000
 
