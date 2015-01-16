@@ -5,31 +5,16 @@ Vagrant.configure(2) do |config|
 
   config.vm.box = "thinktainer/centos-6_6-orajdk7-puppet"
 
-  config.vm.define "zookeeper" do |zk|
-    zk.vm.hostname = 'zk01.local.dev'
-    zk.vm.provider "virtualbox" do |vb|
-      vb.gui = false
-      vb.memory = 1024
-      vb.cpus = 1
-    end
-
-    zk.vm.network "private_network", ip: "192.168.55.1",
-      virtualbox__intnet: true
-
-    zk.vm.network "forwarded_port", guest: 9000, host: 9000
-
-    zk.ssh.forward_agent = true
-  end
-
   config.vm.define "kafka-broker" do |kb|
     kb.vm.hostname = 'kb01.local.dev'
     kb.vm.provider "virtualbox" do |vb|
       vb.gui = false
-      vb.memory = 1024
+      vb.memory = 2048
       vb.cpus = 1
     end
-    kb.vm.network "private_network", ip: "192.168.55.10",
-      virtualbox__intnet: true
+
+    kb.vm.network "forwarded_port", guest: 9000, host: 9000
+    kb.vm.network "private_network", ip: "192.168.55.10"
 
     kb.ssh.forward_agent = true
 
