@@ -21,6 +21,7 @@ Vagrant.configure(2) do |config|
     end
 
     kb.vm.network "forwarded_port", guest: 9000, host: 9000
+    kb.vm.network "forwarded_port", guest: 2181, host: 2181
     kb.vm.network "forwarded_port", guest: 9092, host: 9092
     kb.vm.network "private_network", ip: "192.168.55.10"
 
