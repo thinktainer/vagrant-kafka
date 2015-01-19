@@ -6,9 +6,7 @@ class hosts ($hosts = hiera_hash("hosts")) {
 # kafka brokers
 node /^kb(\d{2}).*/ {
 
-  if (::$osfamily == RedHat) {
-    include epel
-  }
+  include epel
 
   include ::hosts
   include ::roles::kafkawebconsole
