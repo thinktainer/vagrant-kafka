@@ -1,14 +1,9 @@
 # vi: set ft=yaml:sw=2:ts=2:expandtab:
 ---
-kafka::hostname: kb01.local.dev
+kafka::hostname: localhost
 kafka::zookeeper_connect: localhost:2181
 kafka::broker_id: 0
 kafka::package_url: http://mirrors.ukfast.co.uk/sites/ftp.apache.org/kafka/0.8.2-beta/kafka_2.10-0.8.2-beta.tgz
-hosts:
-  kb01.local.dev:
-    ip: 192.168.55.10
-    host_aliases:
-      - kb01
 
 play::version: 2.2.1
 play::install_path: /opt
