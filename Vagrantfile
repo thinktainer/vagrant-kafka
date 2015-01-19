@@ -7,13 +7,21 @@ Vagrant.configure(2) do |config|
 
   config.vm.define "kafka-broker" do |kb|
     kb.vm.hostname = 'kb01.local.dev'
+
     kb.vm.provider "virtualbox" do |vb|
       vb.gui = false
       vb.memory = 2048
       vb.cpus = 1
     end
 
+    kb.vm.provider "vmware_fusion" do |vmware|
+      vmware.gui = false
+      vmware.vmx["numvcpus"] = "1"
+      vmware.vmx["memory"] = "2048"
+    end
+
     kb.vm.network "forwarded_port", guest: 9000, host: 9000
+    kb.vm.network "forwarded_port", guest: 9092, host: 9092
     kb.vm.network "private_network", ip: "192.168.55.10"
 
     kb.ssh.forward_agent = true
